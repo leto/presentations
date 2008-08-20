@@ -15,21 +15,6 @@
     \end{center}
 }
 
-\section{Overview}
-
-\frame{
-    \frametitle{Overview}
-    \begin{itemize}
-        \item Philosophy
-        \item Basics
-        \item Definitions
-        \item The Big Picture
-        \item Motivation for Math::GSL
-        \item History of Math::GSL
-        \item Module::Build and SWIG
-        \item Gotchas
-    \end{itemize}
-}
 \section{Philosophy}
 \frame{
     \frametitle{Don't Write Glue}
@@ -85,11 +70,21 @@
     \end{itemize}
 }
 \frame{
+    \frametitle{What is Math::GSL?}
+    \begin{itemize}
+        \item Perl Interface to the GNU Scientific Library (GSL), which is written in C 
+        \item Provides low-level access that emulates C calling style
+        \item Also provides higher-level OO interface to some subsystems
+        \item Extensive tests (3279 as of 0.10)
+    \end{itemize}
+}
+\frame{
     \frametitle{SWIG Example Code}
     ::begin vim hack session::\\
     \includegraphics[width=8.00cm, height=5.00cm]{gsl_typemaps}\\
     ::end vim hack session::\\
 }
+\section{Going Forward}
 
 \frame{
     \frametitle{Active Development Continues}
@@ -102,7 +97,7 @@
         \item Threads
     \end{itemize}
 }
-
+\section{Acknowledgements}
 \frame{
     \frametitle{Thanks}
 
@@ -113,6 +108,17 @@
         \item Leslie Hawthorn
         \item The entire Google Summer of Code crew
     \end{itemize}
+}
+
+\frame{
+    \frametitle{More Info}
+    \begin{itemize}
+        \item {http://groups.google.com/group/math-gsl-dev}\\
+        \item {http://leto.net/code/Math-GSL/}\\
+        \item {http://leto.net/gitweb/}\\
+        \item {http://www.swig.org}\\
+    \end{itemize}
+
 }
 
 \end{document}
