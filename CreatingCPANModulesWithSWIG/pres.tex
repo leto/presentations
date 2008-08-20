@@ -33,18 +33,41 @@
 \section{Philosophy}
 \frame{
     \frametitle{Don't Write Glue}
+    \begin{center}
     \begin{columns}[t]
         \begin{column}{5cm}
-            {\bf{XS = GLUE}}\\
+            \includegraphics[width=5.00cm, height=5.00cm]{xs_is_glue}
         \end{column}
         \begin{column}{5cm}
             \includegraphics[width=5.00cm, height=5.00cm]{acmeglue}
         \end{column}
     \end{columns}
+    \end{center}
 
 }
 
+\frame{
+    \frametitle{Use an Integrating Pistol}
+    \begin{center}
+    \includegraphics[width=6.26cm, height=3.70cm]{integrating_pistol}\\
+    Need to integrate totally separate entities??\\
+    Integrate it instantly with the ACME Integrating Pistol!!
+    \end{center}
+}
 \section{Basics}
+\subsection{Intro to XS}
+\frame{
+    \frametitle{What is XS?}
+    \begin{itemize}
+        \item eXternal Subroutine
+        \item Large collection of macros which allow C/C++ method calls
+        \item Extremely verbose 
+            \begin{itemize}
+                \item Math::GSL 0.10 has $\approx 274,000$ lines of XS
+            \end{itemize}
+        \item perldoc perlxs
+    \end{itemize}
+}
 \subsection{Intro to SWIG}
 \frame{
     \frametitle{What is SWIG?}
@@ -53,22 +76,30 @@
         \item Creates a scripting language API to a C/C++ library 
         \item 18 target languages supported
         \item Reads header files and transforms datatypes between languages
+        \item Automatic argument type checking
+        \item Concise
+            \begin{itemize}
+                \item Math::GSL 0.10 has $\approx 500 $ lines of SWIG \\
+                   which generates $\approx 274,000$ lines of XS
+            \end{itemize}
     \end{itemize}
 }
 \frame{
     \frametitle{SWIG Example Code}
+    ::begin vim hack session::\\
+    \includegraphics[width=8.00cm, height=5.00cm]{gsl_typemaps}\\
+    ::end vim hack session::\\
 }
-%		\begin{center}
-%	\includegraphics[width=10cm,bb=0 0 1530 666]{ocb1.png}
-% ocb1.png: 72dpi, width=40.96cm, height=19.90cm, bb=0 0 1161 564
-%	\end{center}
 
 \frame{
     \frametitle{Active Development Continues}
 
     \begin{itemize}
-    \item Scientific Computing applications built on top of Math::GSL
-    \item foo
+        \item Scientific Computing applications built on top of Math::GSL
+        \item Full gsl\_function callback support
+        \item Static libraries and error handlers
+        \item Porting to Darwin and Solaris
+        \item Threads
     \end{itemize}
 }
 
@@ -76,9 +107,11 @@
     \frametitle{Thanks}
 
     \begin{itemize}
+        \item Thierry Moisan
         \item Eric Wilhelm
         \item \#pdx.pm
-        \item Leslie Hawthorn and the Google Summer of Code crew
+        \item Leslie Hawthorn
+        \item The entire Google Summer of Code crew
     \end{itemize}
 }
 
