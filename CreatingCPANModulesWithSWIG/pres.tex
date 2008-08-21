@@ -69,20 +69,35 @@
             \end{itemize}
     \end{itemize}
 }
+\subsection{Intro to Math::GSL}
 \frame{
     \frametitle{What is Math::GSL?}
     \begin{itemize}
         \item Perl Interface to the GNU Scientific Library (GSL), which is written in C 
         \item Provides low-level access that emulates C calling style
         \item Also provides higher-level OO interface to some subsystems
+        \item Broken into 48 subsystems like Vector, Matrix, RNG, Complex, Histogram, ... 
         \item Extensive tests (3279 as of 0.10)
     \end{itemize}
 }
+\subsection{Module::Build and SWIG}
+\frame{
+    \frametitle{Module::Build and SWIG}
+    \begin{itemize}
+        \item Module::Build does {\bf{not}} support SWIG directly
+        \item Subclassing to the rescue!
+    \end{itemize}
+    \begin{center}
+        \includegraphics[width=8.00cm, height=5.00cm]{subclass}\\
+    \end{center}
+}
 \frame{
     \frametitle{SWIG Example Code}
-    ::begin vim hack session::\\
-    \includegraphics[width=8.00cm, height=5.00cm]{gsl_typemaps}\\
-    ::end vim hack session::\\
+    \begin{center}
+        ::begin vim hack session::\\
+        \includegraphics[width=8.00cm, height=5.00cm]{gsl_typemaps}\\
+        ::end vim hack session::\\
+    \end{center}
 }
 \section{Going Forward}
 
@@ -102,6 +117,7 @@
     \frametitle{Thanks}
 
     \begin{itemize}
+        \item Device::Cdio
         \item Thierry Moisan
         \item Eric Wilhelm
         \item \#pdx.pm
@@ -113,10 +129,11 @@
 \frame{
     \frametitle{More Info}
     \begin{itemize}
-        \item {http://groups.google.com/group/math-gsl-dev}\\
-        \item {http://leto.net/code/Math-GSL/}\\
-        \item {http://leto.net/gitweb/}\\
         \item {http://www.swig.org}\\
+        \item {http://leto.net/gitweb/}\\
+        \item {http://leto.net/code/Math-GSL/}\\
+        \item {http://groups.google.com/group/math-gsl-dev}\\
+        \item {http://groups.google.com/group/perl-scientific-computing}\\
     \end{itemize}
 
 }
