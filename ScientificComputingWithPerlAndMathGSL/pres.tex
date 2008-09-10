@@ -15,20 +15,28 @@
     \end{center}
 }
 
-\section{Philosophy}
+\section{Why do "Science" with Perl?}
 \frame{
-    \frametitle{Don't Write Glue}
+    \frametitle{Why do "Science" with Perl?}
     \begin{center}
-    \begin{columns}[t]
-        \begin{column}{5cm}
-          %  \includegraphics[width=5.00cm, height=5.00cm]{xs_is_glue}
-        \end{column}
-        \begin{column}{5cm}
-          %  \includegraphics[width=5.00cm, height=5.00cm]{acmeglue}
-        \end{column}
-    \end{columns}
+    \begin{itemize}
+        \item CPAN - Don't reinvent the wheel
+        \item Data Munging - 
+        \item Camels are cool
+    \end{itemize}
     \end{center}
 
+}
+
+\section{Basic Tools}
+\frame{
+    \frametitle{Basic Tools}
+    \begin{center}
+    \begin{itemize}
+        \item PDL - Perl Data Language
+        \item Math::GSL - Interface to the GNU Scientific Library
+    \end{itemize}
+    \end{center}
 }
 
 \section{Going Forward}
@@ -38,10 +46,9 @@
 
     \begin{itemize}
         \item Scientific Computing applications built on top of Math::GSL
-        \item Full gsl\_function callback support
-        \item Static libraries and error handlers
-        \item Porting to Darwin and Solaris
-        \item Threads
+        \item Math::Symbolic integration
+        \item PDL integration
+        \item Callbacks and threaded Perls
     \end{itemize}
 }
 \section{Acknowledgements}
@@ -49,19 +56,15 @@
     \frametitle{Thanks}
 
     \begin{itemize}
-        \item Device::Cdio
-        \item Thierry Moisan
         \item Eric Wilhelm
+        \item Thierry Moisan
         \item \#pdx.pm
-        \item Leslie Hawthorn
-        \item The entire Google Summer of Code crew
     \end{itemize}
 }
 
 \frame{
     \frametitle{More Info}
     \begin{itemize}
-        \item {http://www.swig.org}\\
         \item {http://leto.net/gitweb/}\\
         \item {http://leto.net/code/Math-GSL/}\\
         \item {http://groups.google.com/group/math-gsl-dev}\\
