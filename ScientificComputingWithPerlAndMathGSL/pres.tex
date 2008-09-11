@@ -35,14 +35,14 @@
     \begin{itemize}
         \item PDL - Perl Data Language
             \begin{itemize}
-                \item Basic datatype is an N-dimensional matrix of numbers
+                \item Basic datatype is an N-dimensional matrix 
                 \item Very fast
                 \item Low level
                 \item Overwhelming for a beginner
             \end{itemize}
         \item Math::GSL - Interface to the GNU Scientific Library
             \begin{itemize}
-                \item 422 special functions, hundreds of statistical distributions, descriptive statics,
+                \item 422 special functions, hundreds of statistical distributions, descriptive statistics, splines, root solving,
                         random and quasi-random number generators, FFT, numerical derivative/integration, etc...
                 \item Very fast
                 \item Needs more syntax sugar
@@ -97,6 +97,63 @@
     \end{verbatim}
     \end{small}
     \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Numerical Derivatives and Integration}
+    \begin{center}
+    $ \frac{d}{dx} \left( x^3 \right) = 3 x ^2 $
+        \begin{tiny}
+        \begin{verbatim}
+    ($status, $result) = gsl_deriv_central ( sub { $_[0] ** 3 }, $x, $h,); 
+    my ($value,$error) = @$result;
+        \end{verbatim}
+        \end{tiny}
+        \begin{tiny}
+        \begin{equation*}
+        \int_0^1 x^\alpha \log{\left( 1/x\right)} dx = \frac{1}{\left(\alpha+1\right)^2} 
+        \end{equation*}
+
+        When $ \alpha = 2 $, this reduces to $\frac{1}{9}$.
+        \begin{verbatim}
+    my ($status, $result, $abserr) = gsl_integration_qags (
+                                sub { my $x=shift; $x ** 2 * log (1/$x) } , 
+                                0, 1, 0, 1e-7, 1000,
+                                $gsl_integration_workspace, 
+                           );
+    my ($value,$error) = @$result;
+        \end{verbatim}
+        \end{tiny}
+  \end{center}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{My Background in Scientific Computing}
+    \begin{columns}[T]
+        \begin{column}{5cm}
+            \begin{tiny}
+            \begin{itemize}
+                \item Undergraduate research in Fluid Mechanics
+                \item Required numerical solution of nonlinear boundary value equation
+            \end{itemize}
+                \end{tiny}
+                \begin{equation*}
+v'' + \frac{v'}{r} + \frac{v}{r^2} + 
+\epsilon\left( v' - \frac{v}{r} \right)^2\left(6v'' - \frac{2v}{r} + \frac{2v}{r^2}\right) = 0
+                \end{equation*}
+                \\
+                \begin{tiny}
+                $ v(1) = R, v(\omega) = R $ for various $R$ and $\omega$.
+                \end{tiny}
+        \end{column}
+        \begin{column}{5cm}
+        \end{column}
+    \end{columns}
+    \begin{tiny}
+    \begin{itemize}
+    \item The Runge-Kutta integrator that I wrote in Perl to solve this later became Math::ODE.
+    \end{itemize}
+    \end{tiny}
 \end{frame}
 
 \begin{frame}[fragile]
@@ -166,6 +223,7 @@
     \frametitle{Active Development Continues}
 
     \begin{itemize}
+        \item Darwin support
         \item Scientific Computing applications built on top of Math::GSL
         \item Math::Symbolic integration
         \item PDL integration
