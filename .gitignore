@@ -5,3 +5,5 @@
 *.toc
 *.out
 *.sw?
+.DS_Store
+core*
