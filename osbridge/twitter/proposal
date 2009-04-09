@@ -1,0 +1,20 @@
+
+Many applications are starting to emerge that allow you to slice and dice the Twittersphere, (like Tweetdeck [1] or Yahoo Sideline [2]) such as advanced searching and grouping of tweets, posting to multiple accounts, filtering out unwanted tweets from hash tag searches and generally making searching for what you want easier.
+
+Why not use the power of Perl regex's and the vast CPAN codebase to do as you please? Interested in creating autonomous agents that search for what you are interested in and archiving relevant information? This talk is for you!
+
+As an example, this talk will teach the basics of Net::Twitter[3] by explaining how to write Perl code that watches certain locations (a log file, RSS feed, website, whatever) for given strings of text and depending on which source and string it detects, notifies it's master via Twitter.
+In the case of watching an error log, this can be sending a Direct Message if the error severity is past a threshold or posting a normal tweet on a timeline for more routine events.
+
+Other topics that will be touched upon will include
+
+* Unify interactions with Twitter/Identi.ca/etc
+* Integrating with Continuous Integration/Smoke Testing
+* Tweetholes - Automagically sending certain spam-like messages to the bit bucket
+* Integration with IRC bots, blogs and RSS feeds
+* Filtering out the same message across networks
+
+
+[1] http://www.tweetdeck.com
+[2] http://sideline.yahoo.com
+[3] http://search.cpan.org/dist/Net-Twitter/
