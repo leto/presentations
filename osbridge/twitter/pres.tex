@@ -1,6 +1,6 @@
 \documentclass[12pt]{beamer}
-
 \usepackage{beamerthemeHannover, graphicx, clrscode, amsmath, amssymb, multicol}
+\usepackage{verbatim}
 \setbeamercolor{sidebar}{use=structure,bg=gray!20!green!60!white}
 
 \title{Making Twitter Suck Less With Perl}
@@ -38,24 +38,44 @@
         \end{center}
 }
 
-\frame{
+\begin{frame}[fragile]
     \frametitle{Net::Twitter}
     \begin{itemize}
+    \item Uses Moose
     \item Works with Twitter and Identi.ca
     \item REST, Search and Twittervision API support
     \item OAuth and Basic Authentication
     \item 1 to 1 mapping with API
-        \begin{itemize}
-        \item $\$t->user\_timeline\left(\{count=>5\}\right) $
-        \end{itemize}
-
     \item Net::Twitter::Lite
         \begin{itemize}
         \item Fewer Dependencies
         \item Same great taste
         \end{itemize}
     \end{itemize}
-}
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Net::Twitter Basic Use}
+    \begin{small}
+    \begin{verbatim}
+    my $nt  = Net::Twitter->new({
+                 username => $user,
+                 password => $pass,
+                 traits   => [qw/API::REST/],
+              });
+    my $my_tl    = $nt->user_timeline({count=>5});
+    my $buddy_tl = $nt->user_timeline({
+                        screen_name => $buddy
+                    });
+    $nt->update('Perl rocks!');
+    $nt->new_direct_message($buddy,$tweet);
+    $nt->follow_new($cool_tweep);
+    $nt->unfollow($seo_guy);
+
+    \end{verbatim}
+    \end{small}
+\end{frame}
+
 
 \frame{
     \frametitle{Net::PingFM}
@@ -63,6 +83,14 @@
 
 \frame{
     \frametitle{WWW::ItsABot}
+}
+
+\frame{
+    \frametitle{Twitter::TagGrep}
+}
+
+\frame{
+    \frametitle{Log::Dispatch::Twitter}
 }
 
 \frame{
