@@ -41,8 +41,18 @@
     \item Marketing bots
     \item SEO crazies
     \end{itemize}
+
+    Perl can help with most of these!
 }
 
+\begin{frame}
+    \frametitle{How can Perl help?}
+    \begin{itemize}
+    \item Use the power of CPAN!
+    \item Automate finding what you want
+    \item Filter out what you don't care about
+    \end{itemize}
+\end{frame}
 
 \begin{frame}[fragile]
     \frametitle{Net::Twitter}
@@ -83,14 +93,9 @@
     \end{small}
 \end{frame}
 
-
-\frame{
-    \frametitle{Net::PingFM}
-}
-
 \begin{frame}[fragile]
     \frametitle{WWW::ItsABot}
-    itsabot.com has a database of Twitter bots.
+    \textcolor{blue}{itsabot.com} has a constantly-updated database of Twitter bots.
     \begin{verbatim}
     use WWW::ItsABot qw/is_a_bot/;
     my $username = 'foobar';
@@ -101,22 +106,64 @@
     }
     \end{verbatim}
 
+    It ain't perfect, but it is pretty good. It may
+    think some celebrities are bots and, really,
+    it isn't that far off.
+
 \end{frame}
 
-\frame{
+\begin{frame}[fragile]
     \frametitle{Twitter::TagGrep}
+    \textcolor{red}{grep} for Twitter timelines
+    \begin{verbatim}
+my $tg = Twitter::TagGrep->new( 
+            prefix => '#!',
+            tags => [ @tags ] 
+        );
+my $timeline = $twit->friends_timeline({count=>200});
+my @matches  = $tg->grep_tags($timeline);
+for my $tweet (@matches) {
+    print join(', ', @{$tweet->{tags}}), ": ",
+                $tweet->{text},"\n";
 }
+    \end{verbatim}
+\end{frame}
 
-\frame{
+%\begin{frame}[fragile]
+%    \frametitle{TEMP}
+%    \begin{verbatim}
+%    \end{verbatim}
+%\end{frame}
+
+\begin{frame}[fragile]
     \frametitle{Log::Dispatch::Twitter}
-}
+    Add a Twitter user as a Log::Dispatch logger easily!
+    \begin{verbatim}
+    use Log::Dispatch;
+    use Log::Dispatch::Twitter;
+    my $logger = Log::Dispatch->new;
+    $logger->add(Log::Dispatch::Twitter->new(
+        username  => $username,
+        password  => $password,
+        min_level => "error",
+        name      => "twitter",
+    ));
+    \end{verbatim}
+\end{frame}
 
-\frame{
-    \frametitle{Twitter $\sim$ Collective Being}
-}
-\frame{
-    \frametitle{}
-    Amazing applications wait to be written
-    Next Killer App?
-}
+\begin{frame}[fragile]
+    \frametitle{Conclusions}
+    \begin{itemize}
+    \item Most of the annoying things about Twitter can be solved with a few lines of Perl.
+    \item There is an amazing amount of data waiting to be tapped.
+    \item Perl to the rescue!
+    \end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+    \frametitle{Thanks!}
+    \begin{verbatim}
+    \end{verbatim}
+\end{frame}
 \end{document}
