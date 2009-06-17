@@ -1,7 +1,12 @@
 \documentclass[12pt]{beamer}
-\usepackage{beamerthemeHannover, graphicx, clrscode, amsmath, amssymb, multicol}
+%\usepackage{beamerthemeHannover}
+\usepackage{graphicx, clrscode, amsmath, amssymb, multicol}
 \usepackage{verbatim}
-\setbeamercolor{sidebar}{use=structure,bg=gray!20!green!60!white}
+\usetheme{Copenhagen} 
+
+%\setbeamercolor{sidebar}{use=structure,bg=gray!20!green!60!white}
+\setbeamertemplate{blocks}[rounded][shadow=true]
+
 
 \title{Making Twitter Suck Less With Perl}
 \author[Duke Leto]{Jonathan "Duke" Leto}
@@ -12,18 +17,6 @@
 \frame{
     \frametitle{Making Twitter Suck Less With Perl}
     \framesubtitle{Speak Perl to your favorite $\mu$blogging service}
-}
-
-\frame{
-    \frametitle{What sucks?}
-    \begin{itemize}
-    \item Tag spam (\#omg \#its \#hashtags \#allthewaydown)
-    \item Worms (StalkDaily)
-    \item SEO crazies
-    \item Marketing bots
-    \item Skeezy webapps that steal your credentials
-    \item Interesting tweets buried in a sea of nonsense
-    \end{itemize}
 }
 
 \frame{
@@ -38,6 +31,19 @@
         \end{center}
 }
 
+\frame{
+    \frametitle{What \textcolor{red}{actually} sucks?}
+    \begin{itemize}
+    \item Interesting tweets buried in a sea of nonsense
+    \item Tag spam (\#omg \#its \#hashtags \#allthewaydown)
+    \item Skeezy webapps that steal your credentials
+    \item Worms (StalkDaily)
+    \item Marketing bots
+    \item SEO crazies
+    \end{itemize}
+}
+
+
 \begin{frame}[fragile]
     \frametitle{Net::Twitter}
     \begin{itemize}
@@ -46,6 +52,7 @@
     \item REST, Search and Twittervision API support
     \item OAuth and Basic Authentication
     \item 1 to 1 mapping with API
+    \item Plenty of syntax sugar
     \item Net::Twitter::Lite
         \begin{itemize}
         \item Fewer Dependencies
@@ -81,9 +88,20 @@
     \frametitle{Net::PingFM}
 }
 
-\frame{
+\begin{frame}[fragile]
     \frametitle{WWW::ItsABot}
-}
+    itsabot.com has a database of Twitter bots.
+    \begin{verbatim}
+    use WWW::ItsABot qw/is_a_bot/;
+    my $username = 'foobar';
+    if ( is_a_bot($username) ) {
+        print "$username is a bot\n";
+    } else {
+        print "$username is not a bot\n";
+    }
+    \end{verbatim}
+
+\end{frame}
 
 \frame{
     \frametitle{Twitter::TagGrep}
