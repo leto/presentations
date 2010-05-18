@@ -1,7 +1,7 @@
 \documentclass[12pt]{beamer}
 \usepackage{beamerthemeHannover, graphicx, clrscode, amsmath, amssymb, multicol}
 \usepackage{verbatim}
-\setbeamercolor{sidebar}{use=structure,bg=gray!20!red!60!white}
+\setbeamercolor{sidebar}{use=structure,bg=gray!60!green}
 \title{PL/Parrot \\ \small{ Embedding the Parrot Virtual Machine in PostgreSQL } }
 \author[Leto+Fetter]{Jonathan "Duke" Leto and David Fetter}
 \date{}
@@ -11,11 +11,9 @@
 \frame{
     \titlepage
     \begin{center}
-    %    \includegraphics[width=4.57cm, height=4.25cm]{perl6bacon}
     \end{center}
 }
 
-\section{What is Parrot Virtual Machine?}
 \frame{
     \frametitle{Parrot Virtual Machine}
     \begin{center}
@@ -33,9 +31,8 @@
     \end{center}
 }
 
-\section{Why Embed Parrot VM in PostgreSQL?}
 \frame{
-    \frametitle{Why Embed?}
+    \frametitle{Why Embed Parrot VM in PostgreSQL?}
     \begin{center}
         \begin{itemize}
             \item PL's are (very) hard to write and maintain
@@ -47,22 +44,21 @@
     \end{center}
 }
 
-\section{History of PL/Parrot}
 \frame{
-    \frametitle{History}
+    \frametitle{History of PL/Parrot}
 }
 
-\section{Current Features}
 \frame{
-    \frametitle{Features}
+    \frametitle{Current Features}
     \begin{itemize}
         \item PL/PIR(U)
         \item Pass and return basic datatypes
         \item Basic security model (Don't do that)
+        \item Growing Test Suite
+        \item Enthusiastic and friendly community
     \end{itemize}
 }
 
-\section{Current Bugs/Unimplemented Features}
 \frame{
     \frametitle{Bugs}
     \begin{itemize}
@@ -73,34 +69,32 @@
         \begin{itemize}
             \item IMCC Syntax Errors
             \item Loading libraries from Embed API
+            \item Security API
         \end{itemize}
     \end{itemize}
 }
 
-\section{Example Code}
 \frame{
-    \frametitle{Code}
+    \frametitle{Example Code}
     \includegraphics[width=9.5cm, height=3.6cm]{plparrot_example_code}
 }
 
 
-\section{Future Goals}
 \frame{
     \frametitle{Future Goals}
     \begin{itemize}
         \item PL/Rakudo - Perl 6 in your database!
         \item PL/Pynie - Python in your Parrot in your database!
-        \item Tools to help create a new DSL a.ka. PL on PL/Parrot
+        \item Tools to help create a new DSL with PL/Parrot
     \end{itemize}
 }
 
-\section{How to Get Involved}
 \frame{
-    \frametitle{Get involved}
+    \frametitle{Get involved!}
     \begin{itemize}
-        \item GitHub Issues:
         \item Try PL/Parrot on your system and submit detailed bug reports
         \item Fork on github and hack on stuff!
+        \item Help with GitHub Issues
     \end{itemize}
 }
 
@@ -116,9 +110,10 @@
     \frametitle{ Resources }
     \begin{center}
         \begin{itemize}
+           \item http://github.com/leto/plparrot
+           \item \#plparrot on freenode
            \item http://parrot.org
            \item @parrotvm / !parrot on twitter/identi.ca
-           \item \#plparrot on freenode
         \end{itemize}
     \end{center}
 }
