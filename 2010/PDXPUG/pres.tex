@@ -1,0 +1,131 @@
+\documentclass[12pt]{beamer}
+\usepackage{beamerthemeHannover, graphicx, clrscode, amsmath, amssymb, multicol}
+\usepackage{verbatim}
+\setbeamercolor{sidebar}{use=structure,bg=gray!60!green}
+
+\title{PL/Parrot and PL/Perl6 \\ \small {Parrots and Butterflies in your Database} }
+\author[Duke Leto]{Jonathan "Duke" Leto}
+\date{}
+
+\begin{document}
+
+\frame{
+    \titlepage
+    \begin{center}
+    \end{center}
+}
+
+\frame{
+    \frametitle{Parrot Virtual Machine}
+    \begin{center}
+        \begin{itemize}
+            \item Process (Application) Virtual Machine
+            \item Register-based
+            \item Continuation Passing Style
+            \item Design Goals
+            \begin{itemize}
+                \item Pluggable
+                \item Interoperable
+                \item Dynamic
+            \end{itemize}
+        \end{itemize}
+    \end{center}
+}
+\frame{
+    \frametitle{Rakudo Perl 6}
+    \begin{center}
+        \begin{itemize}
+            \item Most active implementation of Perl 6
+            \item Implements $\sim 80\%$ of the spec
+            \item Currently uses Parrot as a backend, but plans to support others
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{Why Embed Parrot VM in PostgreSQL?}
+    \begin{center}
+        \begin{itemize}
+            \item PL's are (very) hard to write and maintain
+            \item Framework for DSL's
+            \item Platform independent, fast, stored procedures
+            \item Allow various PL's to communicate
+            \item Freeze/thaw subtransaction-level states
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{History of PL/Parrot}
+}
+
+\frame{
+    \frametitle{Current Features}
+    \begin{itemize}
+        \item PL/PIR(U) and PL/Perl6(U)
+        \item Pass and return basic datatypes
+        \item Basic security model (Don't do that)
+        \item Growing Test Suite
+        \item Enthusiastic and friendly community
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Bugs}
+    \begin{itemize}
+        \item Documentation
+        \item SPI
+        \item Triggers
+        \item Parrot Bugs
+        \begin{itemize}
+            \item IMCC Syntax Errors
+            \item Loading libraries from Embed API
+            \item Security API
+        \end{itemize}
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Example Code}
+    \includegraphics[width=9.5cm, height=3.6cm]{plparrot_example_code}
+}
+
+
+\frame{
+    \frametitle{Future Goals}
+    \begin{itemize}
+        \item Tools to help create a new DSL with PL/Parrot
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Get involved!}
+    \begin{itemize}
+        \item Try PL/Parrot on your system and submit detailed bug reports
+        \item Fork on github and hack on stuff!
+        \item Help with GitHub Issues
+        \item \#plparrot on freenode
+        \item http://pl.parrot.org
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{ Thanks }
+    \begin{itemize}
+        \item PL/Parrot team: Joshua Tolley, David E. Wheeler, Daniel Arbelo Arrocha + others
+        \item Rakudo Perl 6 team
+        \item Everyone working on Parrot VM and PostgreSQL
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{ Resources }
+    \begin{center}
+        \begin{itemize}
+           \item http://github.com/leto/plparrot
+           \item http://parrot.org
+           \item @parrotvm / !parrot on twitter/identi.ca
+        \end{itemize}
+    \end{center}
+}
+\end{document}
