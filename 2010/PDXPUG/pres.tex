@@ -2,7 +2,9 @@
 \usepackage{beamerthemeHannover, graphicx, clrscode, amsmath, amssymb, multicol}
 \usepackage{textcomp}
 \usepackage{verbatim}
+\usepackage{listings}
 \setbeamercolor{sidebar}{use=structure,bg=gray!60!green}
+\lstset{language=SQL}
 
 \title{PL/Parrot and PL/Perl6 \\ \small {Parrots and Butterflies in your Database} }
 \author[@dukeleto]{Jonathan "Duke" Leto}
@@ -71,7 +73,6 @@
         \end{itemize}
     \end{center}
 }
-}
 
 \frame{
     \frametitle{Current Features}
@@ -102,11 +103,6 @@
 }
 
 \frame{
-    \frametitle{PL/PIR Example 1}
-    \includegraphics[width=9.5cm, height=3.6cm]{plparrot_example_code}
-}
-
-\frame{
     \frametitle{Installing/Testing PL/Parrot}
     \begin{itemize}
         \item Install Rakudo or Parrot
@@ -119,6 +115,29 @@
         \item make install installcheck \# might need sudo
         \item make test test\_plperl6 \# PL/PIR + PL/Perl6 tests
     \end{itemize}
+}
+
+\frame{
+    \frametitle{PL/PIR Example 1}
+    \includegraphics[width=9.5cm, height=3.6cm]{plparrot_example_code}
+}
+
+\frame{
+    \frametitle{PL/Perl6 Example 1}
+    \small{
+        \lstinputlisting{p6fib.sql}
+    }
+}
+
+\frame{
+    \frametitle{PL/Perl6 Example 2}
+    \tiny{
+        \lstinputlisting{p6grammar.sql}
+    }
+}
+
+\frame{
+    \frametitle{How is PL/Parrot Sausage Made?}
 }
 
 \frame{
