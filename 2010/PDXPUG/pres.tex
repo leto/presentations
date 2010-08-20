@@ -6,7 +6,7 @@
 \setbeamercolor{sidebar}{use=structure,bg=gray!60!green}
 \lstset{language=SQL}
 
-\title{PL/Parrot and PL/Perl6 \\ \small {Parrots and Butterflies in your Database} }
+\title{PL/Parrot and PL/Perl6 \\ \small {Parrots and Butterflies in PostgreSQL} }
 \author[@dukeleto]{Jonathan "Duke" Leto}
 \date{}
 
@@ -14,8 +14,10 @@
 
 \frame{
     \titlepage
-    \begin{center}
-    \end{center}
+    \begin{columns}[tc]
+            \includegraphics[width=121px, height=112px]{camelia}
+            \includegraphics[width=101px, height=135px]{parrot}
+    \end{columns}
 }
 
 \frame{
@@ -44,7 +46,7 @@
             \item Implements $\sim 80\%$ of the spec
             \item Currently uses Parrot as a backend, but plans to support others
             \item Stable release series is Rakudo Star, dev release every month
-            \item Getting faster do to optimizations in Parrot
+            \item Getting faster due to optimizations in Parrot
         \end{itemize}
     \end{center}
 }
@@ -91,8 +93,9 @@
     \begin{itemize}
         \item Documentation - http://pl.parrot.org
         \item SPI - branch being worked by cxreg++, elog works!
-        \item Triggers
+        \item Triggers - we need help!
         \item SETOF - branch with some tests
+        \item Row handling
         \item Parrot Bugs
         \begin{itemize}
             \item IMCC Syntax Errors
@@ -139,10 +142,23 @@
 }
 
 \frame{
-    \frametitle{How is PL/Parrot Sausage Made?}
+    \frametitle{How is PL/PIR Sausage Made?}
     \begin{itemize}
         \item A Parrot interpreter is created for each language
-        \item perl6.pbc is loaded into the interp for PL/Perl6
+        \item PG datatypes are converted to Parrot datatypes, in C, with magic
+        \item Stored procedure code is wrapped in anonymous sub, compiled and invoked from C
+        with Parrot\_ext\_call
+        \item Parrot datatypes are converted back to PG datatypes
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{How is PL/Perl6 Sausage Made?}
+    \begin{itemize}
+        \item perl6.pbc is automagically found and loaded into the interp for PL/Perl6
+        \item PG datatypes are converted to PL/Perl6 datatypes in PIR with \&infix\textless,\textgreater
+        \item Stored procedure code is wrapped in a closure, compiled and invoked from PIR
+        \item PL/Perl6 datatypes are converted back to PG datatypes
     \end{itemize}
 }
 
@@ -189,7 +205,8 @@
            \item http://github.com/leto/plparrot
            \item http://parrot.org
            \item @parrotvm / !parrot on twitter/identi.ca
-           \item @dukeleto / @leto on twitter/identi.ca
+           \item @dukeleto / !leto on twitter/identi.ca
+           \item Slides available at http://github.com/leto/presentations
         \end{itemize}
     \end{center}
 }
