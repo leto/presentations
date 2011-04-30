@@ -62,6 +62,14 @@
 }
 
 \frame{
+    \frametitle{What does Jitterbug look like? (3)}
+    TODO: Show email screenshot
+    \begin{center}
+    %    \includegraphics[scale=0.3]{jitterbug_project}
+    \end{center}
+}
+
+\frame{
     \frametitle{Current Features}
     \begin{itemize}
         \item Integrates seamlessy with Github post-receive hooks
@@ -95,6 +103,15 @@
         \item perl scripts/jitterbug\_db --config config.yml --deploy
         \item perl scripts/builder.pl -c config.yml
         \item Add http://example.com:8080/hook/ as a Github post-receive URL
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Customizing Jitterbug}
+    Interesting config file options...
+    \begin{itemize}
+        \item reuse\_repo - Reuse git repos instead of recloning
+        \item stack\_builds - Test every commit, not just current HEAD
     \end{itemize}
 }
 
