@@ -1,7 +1,6 @@
 \documentclass[12pt]{beamer}
 \usepackage{beamerthemeHannover, graphicx, clrscode, amsmath, amssymb, multicol}
-\usepackage{textcomp}
-\usepackage{verbatim}
+\usepackage{textcomp} \usepackage{verbatim}
 \usepackage{listings}
 \setbeamercolor{sidebar}{use=structure,bg=gray!60!green}
 \lstset{language=SQL}
@@ -17,6 +16,23 @@
     \begin{center}
     \includegraphics[width=125px, height=115px]{dancing.jpg}
     \end{center}
+}
+
+\frame{
+    \frametitle{What is Continuous Integration (CI) ?}
+
+    Continually and automatically testing code, usually with relevant notifications.
+}
+
+\frame{
+    \frametitle{Why is CI Useful?}
+    \begin{itemize}
+        \item Know the exact commit that broke something
+        \item Automate testing many different combinations of different versions
+            of libraries, languages, OS's, browsers, etc...
+        \item Quickly identifies tests that only pass on the authors machine
+            due to implicit assumptions
+    \end{itemize}
 }
 
 \frame{
@@ -43,9 +59,26 @@
 
 
 \frame{
-    \frametitle{Installing/Testing Jitterbug}
+    \frametitle{Getting Jitterbug}
     \begin{itemize}
-        \item stuff
+        \item  git clone git://github.com/franckcuny/jitterbug.git
+        \item cd jitterbug
+        \item perl Build.PL
+        \item ./Build installdeps \# install dependencies
+        \item ./Build test        \# run tests
+    \end{itemize}
+
+    Will release to CPAN Real Soon Now
+}
+
+\frame{
+    \frametitle{Doing the Jitterbug}
+    \begin{itemize}
+        \item vi config.yml \# Customize YAML config
+        \item perl jitterbug.pl -p 8080 \# Web interface
+        \item perl scripts/jitterbug\_db --config config.yml --deploy
+        \item perl scripts/builder.pl -c config.yml
+        \item Add http://example.com:8080/hook/ as a Github post-receive URL
     \end{itemize}
 }
 
@@ -72,7 +105,8 @@
 \frame{
     \frametitle{ Thanks }
     \begin{itemize}
-        \item stuff
+        \item Franck Cuny
+        \item Boyce Thompson Institute for Plant Research
     \end{itemize}
 }
 
