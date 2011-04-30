@@ -63,9 +63,8 @@
 
 \frame{
     \frametitle{What does Jitterbug look like? (3)}
-    TODO: Show email screenshot
     \begin{center}
-    %    \includegraphics[scale=0.3]{jitterbug_project}
+        \includegraphics[scale=0.3]{jitterbug_email}
     \end{center}
 }
 
@@ -111,7 +110,9 @@
     Interesting config file options...
     \begin{itemize}
         \item reuse\_repo - Reuse git repos instead of recloning
-        \item stack\_builds - Test every commit, not just current HEAD
+        \item stack\_tasks - Test every commit, not just current HEAD
+        \item perlbrew - use perlbrew to test under many versions/builds of Perl
+        \item email\_on\_pass - whether to send emails for PASSing test suites
     \end{itemize}
 }
 
