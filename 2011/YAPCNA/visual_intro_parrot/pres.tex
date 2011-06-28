@@ -11,7 +11,7 @@
 \frame{
     \titlepage
     \begin{center}
-%     \includegraphics[scale=0.5]{parrot_logo}
+        \includegraphics[scale=0.5]{parrot_logo}
     \end{center}
 }
 
@@ -63,13 +63,12 @@
         \end{itemize}
     \end{center}
 
-    PICTURE OF DELICIOUS COOKIE
 }
 
 \frame{
     \frametitle{ PMC is for Cookie ... }
 
-    Some people like really sweet dark chocolate chip peanut butter cookies.
+    Some people like really sweet, dark chocolate chip, peanut butter cookies.
 
     \begin{center}
         \begin{itemize}
@@ -88,8 +87,8 @@
     \frametitle{ PMC is for Cookie ... }
 
     OH NOES! Some people are allergic to peanut butter, dislike processed flour
-    and prefer milk chocolate!  Almond butter is a delicious replacement for
-    peanut butter.
+    and prefer milk chocolate!  Also, Almond butter is a delicious replacement
+    for peanut butter.
 
     \begin{center}
         \begin{itemize}
@@ -104,6 +103,34 @@
 
 }
 
+\frame{
+    \frametitle{ The meta-recipe is actually a VTABLE! }
+
+    VTABLE = virtual tables \\
+
+    Examples of actual VTABLEs:\\
+    \begin{center}
+        \begin{itemize}
+            \item get\_integer - get integer representation of PMC
+            \item set\_integer - set integer representation of PMC
+            \item get\_number - get numeric/float representation
+            \item set\_number - set numeric/float representation
+            \item elements - get the number of elements
+        \end{itemize}
+    \end{center}
+
+    Just like no recipe uses every ingredient in your fridge, each PMCs does not implement every VTABLE.
+}
+
+\frame{
+    \frametitle{ Continuation Passing Style }
+
+    No stacks!
+
+    \begin{center}
+        \includegraphics[scale=0.2]{cps}
+    \end{center}
+}
 
 \frame{
     \frametitle{ Resources }
