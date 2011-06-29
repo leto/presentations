@@ -25,7 +25,7 @@
         \item A collection of languages
         \item A virtual machine to run said languages
         \item A set of tools to write new languages
-        \item A playground for research
+        \item A playground for compiler + language research
         \item A second cousin to Perl 6
     \end{itemize}
 
@@ -33,15 +33,33 @@
 }
 
 \frame{
-    \frametitle{ The Parrot Onion }
+    \frametitle{ Parrot Culture }
+    \begin{center}
+     \includegraphics[scale=0.5]{rube-goldberg}
+    \end{center}
+}
 
-    ONION diagram
+\frame{
+    \frametitle{ The Parrot Onion (NOW) }
+
+    \begin{center}
+     \includegraphics[scale=0.7]{parrot_onion}
+    \end{center}
+}
+
+\frame{
+    \frametitle{ The Future Parrot Onion }
+
+    \begin{center}
+     \includegraphics[scale=0.7]{parrot_onion_future}
+    \end{center}
+
 }
 
 \frame{
     \frametitle{ PMC is for Cookie ... }
     PMC = Parrot Magic Cookie a.k.a. Objects \\
-    Serious people prefer to call them \\ PolyMorphic Containers
+    Serious people prefer to call them PolyMorphic Containers, but not me
 
     \begin{center}
      \includegraphics[scale=0.4]{parrot_cookie}
@@ -50,8 +68,8 @@
 
 \frame{
     \frametitle{ PMC is for Cookie ... }
-    All PMCs follow a "meta-recipe"
 
+    Meta-recipe:
     \begin{center}
         \begin{itemize}
             \item \_ cups of \_ flour
@@ -87,7 +105,7 @@
     \frametitle{ PMC is for Cookie ... }
 
     OH NOES! Some people are allergic to peanut butter, dislike processed flour
-    and prefer milk chocolate!  Also, Almond butter is a delicious replacement
+    and prefer milk chocolate!  Also, almond butter is a delicious replacement
     for peanut butter.
 
     \begin{center}
@@ -123,13 +141,71 @@
 }
 
 \frame{
+    \frametitle{ Register-based }
+
+    No stacks! Like Lua VM and Dalvik VM
+
+    \begin{center}
+        \includegraphics[scale=1.0]{stacks}
+    \end{center}
+
+    Different set of optimizations than stack-based VMs
+}
+
+\frame{
     \frametitle{ Continuation Passing Style }
 
-    No stacks!
+    Keep passing it along...
 
     \begin{center}
         \includegraphics[scale=0.2]{cps}
     \end{center}
+}
+
+
+\frame{
+    \frametitle{ Deprecation Policy }
+
+    We give our APIs a bath every three months...
+
+    \begin{center}
+        \includegraphics[scale=0.2]{parrot_bath}
+    \end{center}
+}
+
+\frame{
+    \frametitle{ Deprecation Policy }
+
+    api.yaml
+
+    \begin{center}
+        \includegraphics[scale=0.3]{api_yaml}
+    \end{center}
+
+    tools/dev/show\_deprecated.nqp \\
+    tools/dev/resolve\_deprecated.nqp \\
+    tools/dev/show\_experimental.nqp \\
+    tools/dev/dedeprecator.nqp \\
+}
+
+\frame{
+    \frametitle{ Parrot Compiler Toolkit (PCT) }
+
+    We give you the dough, you cook it...
+
+    \begin{center}
+        \includegraphics[scale=0.4]{cookie_dough.jpg}
+    \end{center}
+}
+
+\frame{
+    \frametitle{ Parrot Compiler Toolkit (PCT) }
+
+    Web Interface Coming Real Soon Now
+    \begin{itemize}
+        \item tools/dev/mk\_language\_shell.pl - PIR build system
+        \item tools/dev/create\_language.pl    - Perl 5 build system \\
+    \end{itemize}
 }
 
 \frame{
@@ -137,15 +213,20 @@
     \begin{center}
         \begin{itemize}
             \item http://docs.parrot.org
+            \item \#parrot on irc.parrot.org
+            \item parrot-dev and parrot-users mailing lists
+            \item https://github.com/Benabik/cish
         \end{itemize}
     \end{center}
 }
 
 \frame{
     \frametitle{ Thanks! }
-    \begin{itemize}
-        \item foo
-    \end{itemize}
+    \begin{center}
+        \includegraphics[scale=0.4]{thanks.jpg}
+    \end{center}
+
+    Slides at https://github.com/leto/presentations
 
 }
 
