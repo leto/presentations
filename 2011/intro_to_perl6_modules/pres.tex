@@ -68,15 +68,61 @@
 
 \frame{
     \frametitle{What does META.info look like?}
+
+    It is just a chunk of JSON with project metadata.
+
     \begin{center}
         \includegraphics[scale=0.5]{soundex_meta_info}
     \end{center}
 
 }
 
+\section{How Do I Install a Perl 6 Module}
+
+\frame{
+    \frametitle{How Do I Install a Perl 6 Module}
+
+    You must enlist the help of a panda!
+
+    \includegraphics[scale=0.3]{panda1}
+}
+
+\frame{
+    \frametitle{Installing Panda}
+
+    First, we grab panda (the cpanminus of Perl 6):
+
+    \begin{itemize}
+    \item git clone git://github.com/tadzik/panda.git
+    \item cd panda
+    \item sh bootstrap.sh \# needs a perl6 binary in PATH
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Installing a Perl 6 Module with Panda}
+    So simple, even your grandma could do it:
+    \begin{itemize}
+    \item panda install Algorithm::Soundex
+    \end{itemize}
+}
+
+\section{How Do I Write A Perl 6 Module?}
 \frame{
     \frametitle{How Do I Start Writing a Perl 6 Module?}
+
+    \begin{itemize}
+    \item git clone https://github.com/tadzik/module-starter
+    \item cd module-starter
+    \item module-starter --description="some junk" Some::Junk
+
+    \end{itemize}
+    Now you have directory Some-Junk/ with a META.info!
 }
+
+\frame{
+    \frametitle{Show me the code!}
+
 
 
 \frame{
