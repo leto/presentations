@@ -1,0 +1,213 @@
+\documentclass[12pt]{beamer}
+\usepackage{beamerthemeHannover, graphicx, amsmath, amssymb, multicol}
+\usepackage{textcomp}
+\usepackage{verbatim}
+\usepackage{listings}
+\setbeamercolor{sidebar}{use=structure,bg=gray!60!green}
+\lstset{language=SQL}
+
+\title{PL/Perl6 \\ \small {Butterflies in your PostgreSQL database} }
+\author[@dukeleto]{Jonathan "Duke" Leto}
+\date{}
+
+\begin{document}
+
+\frame{
+    \titlepage
+    \begin{columns}[tc]
+            \includegraphics[width=121px, height=112px]{camelia}
+            \includegraphics[width=101px, height=135px]{parrot}
+    \end{columns}
+}
+
+\frame{
+    \frametitle{Parrot Virtual Machine}
+    \begin{center}
+        \begin{itemize}
+            \item Process (Application) Virtual Machine
+            \item Register-based
+            \item Continuation Passing Style
+            \item Design Goals
+            \begin{itemize}
+                \item Pluggable
+                \item Interoperable
+                \item Dynamic
+            \end{itemize}
+            \item 3.6.0 just released
+        \end{itemize}
+    \end{center}
+}
+\frame{
+    \frametitle{Rakudo Perl 6}
+    \begin{center}
+        \begin{itemize}
+            \item Most active implementation of Perl 6
+            \item Currently uses Parrot as a backend
+            \item Stable release series is Rakudo Star
+            \item New Rakudo Star expected this summer
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{Why Embed Parrot VM in PostgreSQL?}
+    \begin{center}
+        \begin{itemize}
+            \item Procedural/PostgreSQL Languages (PL's) are hard to write and maintain
+            \item PL/Parrot does the hard work, HLLs benefit with much less effort
+            \item Platform independent, fast$^\dagger$, stored procedures
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{PL/Parrot Timeline}
+    \begin{center}
+        \begin{itemize}
+            \item PostgreSQL came from Ingres, started in the mid 1970's
+            \item Parrot started around 2001
+            \item Empty pgFoundry repo created 2006 by David Fetter/Joshua Tolley
+            \item GitHub repo created Oct 2009 by Duke Leto
+            \item PL/Perl6 started to work June 2010
+            \item New Embed API in Parrot implemented Late 2010
+            \item Currently translating to the new API
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{Current Features}
+    \begin{itemize}
+        \item PL/PIR and PL/Perl6
+        \item Pass and return basic datatypes
+        \item Basic security model (Don't do that)
+        \item Growing Test Suite
+        \item Enthusiastic and friendly community
+        \item Coolest Feature: Use Perl 6 grammars in PostgreSQL!
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Things that creak}
+    \begin{itemize}
+        \item Documentation - http://pl.parrot.org
+        \item Doesn't compile on latest Parrot due to bitrot
+        \item SPI - branch being worked by cxreg++, elog works!
+        \item Triggers - we need help!
+        \item SETOF - branch with some tests
+        \item Row handling
+        \item Parrot Bugs
+        \begin{itemize}
+            \item IMCC Syntax Errors
+            \item Security API
+            \item Extend/Embed API
+        \end{itemize}
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Installing/Testing PL/Parrot}
+    \begin{itemize}
+        \item Install Rakudo or Parrot
+        \item \# parrot\_config needs to be in your \textdollaroldstyle PATH
+        \item git clone git://github.com/leto/plparrot.git
+        \item cd plparrot
+        \item export PGPORT=5555 \# if necessary
+        \item make install installcheck \# might need sudo
+        \item make test test\_plperl6 \# PL/PIR + PL/Perl6 tests
+    \end{itemize}
+    NEW: Get it from PGXN.org!
+}
+
+\frame{
+    \frametitle{PL/PIR Example 1}
+    \small{
+        \lstinputlisting{pir1.sql}
+    }
+}
+
+\frame{
+    \frametitle{PL/Perl6 Example 1}
+    \small{
+        \lstinputlisting{p6fib.sql}
+    }
+}
+
+\frame{
+    \frametitle{PL/Perl6 Example 2}
+    \tiny{
+        \lstinputlisting{p6grammar.sql}
+    }
+}
+
+\frame{
+    \frametitle{How is PL/PIR Sausage Made?}
+    \begin{itemize}
+        \item A Parrot interpreter is created for each language
+        \item PG datatypes are converted to Parrot datatypes, in C, with magic
+        \item Stored procedure code is wrapped in anonymous sub, compiled and invoked from C
+        with Parrot\_ext\_call
+        \item Parrot datatypes are converted back to PG datatypes
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{How is PL/Perl6 Sausage Made?}
+    \begin{itemize}
+        \item perl6.pbc is automagically found and loaded into the interp for PL/Perl6
+        \item PG datatypes are converted to PL/Perl6 datatypes in PIR with \&infix\textless,\textgreater
+        \item Stored procedure code is wrapped in a closure, compiled and invoked from PIR
+        \item PL/Perl6 datatypes are converted back to PG datatypes
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Current Goals}
+    \begin{itemize}
+        \item Convert to new Parrot Embed API
+        \item Easy onramps to add new languages to PL/Parrot
+        \item Framework for DSL's
+        \item Allow various PL's to communicate
+        \item Freeze/thaw subtransaction-level states
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Get involved!}
+    \begin{itemize}
+        \item Try PL/Parrot on your system and submit detailed bug reports
+        \item Fork on github and hack on stuff!
+        \item Help with GitHub Issues
+        \item \#plparrot on freenode
+        \item http://pl.parrot.org
+        \item http://groups.google.com/group/plparrot
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{ Thanks }
+    \begin{itemize}
+        \item PL/Parrot team:
+            \begin{itemize}
+            \item David Fetter, David E. Wheeler, Joshua Tolley, Daniel Arbelo Arrocha, Dave Olszewski
+            \item AKA davidfetter++, theory++, eggyknap++, darbelo++, cxreg++
+            \end{itemize}
+        \item Everyone working on Parrot Virtual Machine, Perl 6 and PostgreSQL
+        \item Especially (Moritz Lenz) moritz++, (Peter Lobsinger) plobsing++ and (Stephen O'Rear) sorear++, for great advice and help
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{ Resources }
+    \begin{center}
+        \begin{itemize}
+           \item http://pl.parrot.org
+           \item http://github.com/leto/plparrot
+           \item http://parrot.org
+           \item @parrotvm / !parrot on twitter/identi.ca
+           \item @dukeleto / !leto on twitter/identi.ca
+           \item Slides available at http://github.com/leto/presentations
+        \end{itemize}
+    \end{center}
+}
+\end{document}
