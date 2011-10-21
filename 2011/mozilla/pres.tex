@@ -1,0 +1,98 @@
+\documentclass[12pt]{beamer}
+\usepackage{beamerthemeHannover, graphicx, amsmath, amssymb, multicol}
+\usepackage{textcomp}
+\usepackage{verbatim}
+\usepackage{listings}
+\setbeamercolor{sidebar}{use=structure,bg=gray!10!orange}
+\lstset{language=PHP}
+
+\title{ CASH Music \\ Refactoring The Music Industry }
+\author[@dukeleto]{Jonathan "Duke" Leto}
+\date{}
+
+\begin{document}
+
+\frame{
+    \titlepage
+    \begin{center}
+        \includegraphics[width=225px, height=160px]{cashmusic}
+    \end{center}
+}
+
+\frame{
+    \frametitle{CASH Music}
+    \begin{center}
+        \begin{itemize}
+            \item Artists should control their careers
+            \item Artist website is their business hub
+            \item Web is becoming an open platform for closed apps
+            \item Normal folks don't want to know what an API is
+            \item Aside: People are not APIs!
+            \item CM candy coats APIs into delicious interoperable UI components
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{Why is CASH Music Important To Artists?}
+    \begin{center}
+        \begin{itemize}
+            \item We support artist sustainability...
+            \item Artists currently pay up to a 40\% cut of digital sales
+            \item Artists pay $\sim$ 50 cents *per* download code
+            \item Artists don't know who their fans are! (iTunes)
+            \item CASH Music is a non-profit (unheard of in music tech)
+            \item Artists don't know they need CASH Music, yet
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{Web.Next Scale}
+    \begin{center}
+        \begin{itemize}
+            \item Individual vs. Corporate Scale
+            \item CASH Music solves problems at the scale of individual artists, bands and labels
+            \item These people are not typical techie types
+            \item Need to design UI's for a unique niche
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{ CASH Music Dirty Details }
+    \begin{center}
+        \begin{itemize}
+            \item Requires PHP 5.2.3 or newer (includes just about every crappy webhost)
+            \item No external dependencies (bundles a few)
+            \item Works on SQLite or MySQL (Postgres would be cool, but no one would use it)
+            \item Custom single file web installer (needs music)
+            \item We have a test suite! And continuous integration!
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{ Happening Now... }
+    \begin{center}
+        \begin{itemize}
+            \item Live demos every other week with real artists
+            \item In talks with many companies to integrate into various APIs
+            \item ...
+        \end{itemize}
+    \end{center}
+
+}
+
+\frame{
+    \frametitle{ Resources }
+    \begin{center}
+        \begin{itemize}
+           \item http://cashmusic.org
+           \item http://github.com/cashmusic
+           \item @cashmusic
+           \item Slides available at http://leto.github.com
+        \end{itemize}
+    \end{center}
+}
+\end{document}
