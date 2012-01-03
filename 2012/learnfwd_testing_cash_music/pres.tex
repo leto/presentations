@@ -5,7 +5,7 @@
 \setbeamercolor{sidebar}{use=structure,bg=red!60!yellow}
 \lstset{language=SQL}
 
-\title{Testing CASH Music}
+\title{LearnFWD: Testing CASH Music}
 \author[@dukeleto]{Jonathan "Duke" Leto}
 \date{}
 
@@ -14,14 +14,28 @@
 \frame{
     \titlepage
     \begin{center}
-    \includegraphics[width=125px, height=115px]{dancing.jpg}
+    \includegraphics[scale=0.5]{webfwd.jpg}
     \end{center}
+}
+
+\frame{
+    \frametitle{What does CASH Music use to test stuff?}
+    \begin{itemize}
+        \item PHP SimpleTest - http://simpletest.org
+        \item Test::WWW::Mechanize - http://cpan.org
+        \item Test::Most - http://cpan.org
+        \item Test::JSON - htpp://cpan.org
+        \item Jitterbug - http://jitterbug.pl
+    \end{itemize}
 }
 
 \frame{
     \frametitle{What is Continuous Integration (CI) ?}
 
-    Continually and automatically testing code, usually with relevant notifications.
+    \begin{itemize}
+    \item Continually and automatically testing code, usually with relevant notifications.
+    \item http://dev.cashmusic.org:3000
+    \end{itemize}
 }
 
 \frame{
@@ -46,29 +60,6 @@
 }
 
 \frame{
-    \frametitle{What does Jitterbug look like?}
-
-    \begin{center}
-        \includegraphics[width=260px, height=225px]{jitterbug_dashboard}
-    \end{center}
-}
-
-\frame{
-    \frametitle{What does Jitterbug look like? (2)}
-
-    \begin{center}
-        \includegraphics[scale=0.3]{jitterbug_project}
-    \end{center}
-}
-
-\frame{
-    \frametitle{What does Jitterbug look like? (3)}
-    \begin{center}
-        \includegraphics[scale=0.3]{jitterbug_email}
-    \end{center}
-}
-
-\frame{
     \frametitle{Current Jitterbug Features}
     \begin{itemize}
         \item Extremely Memory Efficient
@@ -82,7 +73,43 @@
 }
 
 \frame{
-    \frametitle{Future Goals}
+    \frametitle{What does Jitterbug look like? }
+
+    \begin{center}
+        \includegraphics[scale=0.3]{cm_jitterbug2}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What do our PHP tests look like?}
+    \begin{center}
+        \includegraphics[scale=0.3]{cm_system_tests}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What do our Perl tests look like?}
+    \begin{center}
+        \includegraphics[scale=0.30]{cm_perl_test}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What does passing test output look like?}
+    \begin{center}
+        \includegraphics[scale=0.25]{cthulhu_cashmusic}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What does failing test output look like?}
+    \begin{center}
+        \includegraphics[scale=0.25]{cm_fail}
+    \end{center}
+}
+
+\frame{
+    \frametitle{Future Goals: CASH Music Testing}
     \begin{itemize}
         \item Javascript Unit Tests
         \item Testing the Dev Installer
