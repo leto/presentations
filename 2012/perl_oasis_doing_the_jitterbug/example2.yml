@@ -1,2 +1,7 @@
-foo:
-    bar
+plugins:
+  DBIC:
+    schema:
+      skip_automake: 1
+      pckg: "Jitterbug::Schema"
+      connect_info:
+        - dbi:SQLite:dbname=jitterbug.db

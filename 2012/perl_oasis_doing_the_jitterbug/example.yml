@@ -1,2 +1,9 @@
-stuff:
-    things
+jitterbug :
+  options :
+    perlbrew : 1
+    email_on_pass : 0
+    branches :
+      parrot: master|smoke−me
+    projects :
+      rakudo :
+        builder: ./scripts/custom build.sh
