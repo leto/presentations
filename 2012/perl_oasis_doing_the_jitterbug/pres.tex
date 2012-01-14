@@ -82,6 +82,13 @@
 }
 
 \frame{
+    \frametitle{What does Jitterbug look like? (4)}
+    \begin{center}
+        \includegraphics[scale=0.25]{cthulhu_cashmusic}
+    \end{center}
+}
+
+\frame{
     \frametitle{Current Features}
     \begin{itemize}
         \item Integrates seamlessy with Github post-receive hooks
@@ -100,7 +107,9 @@
         \item  git clone git://github.com/franckcuny/jitterbug.git
         \item cd jitterbug
         \item perl Build.PL
-        \item ./Build installdeps \# install dependencies
+        \item cpanm --installdeps . \# cpanminus to install deps
+        \item OR
+        \item ./Build installdeps \# install deps
         \item ./Build test        \# run tests
     \end{itemize}
 
