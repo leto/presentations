@@ -1,0 +1,116 @@
+\documentclass[12pt]{beamer}
+\usepackage{beamerthemeHannover, graphicx, clrscode, amsmath, amssymb, multicol}
+\usepackage{textcomp} \usepackage{verbatim}
+\usepackage{listings}
+\setbeamercolor{sidebar}{use=structure,bg=red!50!yellow}
+
+\title{PDXGit Meeting Zero}
+\author[@dukeleto]{Jonathan "Duke" Leto}
+\date{}
+
+\begin{document}
+
+\frame{
+    \titlepage
+    \begin{center}
+    \includegraphics[scale=1]{pdxgit.png}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What's new in Git 1.7.x}
+    \begin{itemize}
+        \item Submodules suck less!
+        \item Multi-cherry-pick
+        \item Sparse checkouts
+        \item git grep is multithreaded!
+        \item git-svn groks svn merges
+        \item git stash corner cases fixed
+        \item general gitweb improvements
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{What's new in Git 1.7.x}
+    Sugar for deleting branches:
+    \begin{itemize}
+        \item git push origin :goner
+        \item git push origin --delete goner
+    \end{itemize}
+    Other stuff:
+    \begin{itemize}
+        \item New diff algorithm available called "patience"
+        \item git merge --edit \# instead of --nocommit
+        \item git submodule update --init --recursive
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{What is libgit2?}
+    \includegraphics[scale=0.35]{libgit2.png}
+}
+
+\frame{
+    \frametitle{What is libgit2, seriously?}
+    \begin{itemize}
+        \item Reimplementation of Git
+        \item Like a kid sister, not a fork or replacement
+        \item Fixes issues that are baked into Git 1.x being for the CLI, not a library
+        \item Portable, supports Windows natively
+        \item Lighter footprint, better for embedded/mobile apps
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{What is libgit2, seriously?}
+    http://libgit2.github.com
+    \begin{center}
+        \includegraphics[scale=0.35]{libgit2_www.png}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What is libgit2, seriously?}
+    What can it do now?
+    \begin{itemize}
+        \item Open repos
+        \item Look inside repos
+        \item Create commits, search through commits
+    \end{itemize}
+    Coming soon:
+    \begin{itemize}
+        \item Pushing + pulling from remotes
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{How do I get involved with libgit2?}
+    \begin{itemize}
+        \item https://github.com/libgit2
+        \item \#libgit2 on freenode
+        \item libgit2@librelist.com
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{How do I get involved with PDXGit?}
+    \begin{itemize}
+        \item https://github.com/pdxgit
+        \item http://pdxgit.com (Will fix this soon)
+        \item pdxgit@librelist.com
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{ Stalk Me }
+    \begin{center}
+        \begin{itemize}
+           \item http://dukeleto.pl
+           \item http://linkedin.leto.net
+           \item http://twitter.com/dukeleto
+           \item http://identi.ca/leto
+           \item dukeleto on irc.perl.org, Freenode, Mozilla
+        \end{itemize}
+    \end{center}
+}
+\end{document}
