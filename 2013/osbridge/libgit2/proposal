@@ -1,0 +1,18 @@
+The Dream-Quest of libgit2
+
+libgit2 is Git re-imagined as a thread-safe library instead of a collection of
+command-line scripts.  This talk will describe why that is so important and the
+various technologies it will enable in the near future in embedded and mobile
+devices.
+
+
+libgit2 is a reimplementation of Git as a thread-safe library in pure C. That
+is huge. Currently, many libraries cannot integrate with Git properly for
+various reasons that are baked into how Git works on the command-line.
+
+libgit2 is not going to replace Git 1.x. Rather, it is a kid sister. But
+libgit2 is bringing native Git support to new platforms, especially mobile
+and embedded, because it does not depend on Perl or /bin/sh.
+
+This will allow many mobile and embedded applications to be built which will
+use very little memory and be compatibale with multi-core systems.
