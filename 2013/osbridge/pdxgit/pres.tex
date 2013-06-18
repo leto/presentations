@@ -1,0 +1,105 @@
+\documentclass[12pt]{beamer}
+\usepackage{beamerthemeHannover, graphicx, clrscode, amsmath, amssymb, multicol}
+\usepackage{textcomp} \usepackage{verbatim}
+\usepackage{listings}
+\setbeamercolor{sidebar}{use=structure,bg=red!50!yellow}
+
+\title{Clone A Git Together Into Your Town}
+\author[@dukeleto]{Jonathan "Duke" Leto}
+\date{}
+
+\begin{document}
+
+\frame{
+    \titlepage
+    \begin{center}
+    \includegraphics[scale=1]{pdxgit.png}
+    \end{center}
+}
+
+\frame{
+    \frametitle{Digging into git describe}
+    \begin{itemize}
+        \item What does it do?
+        \item Why is it useful?
+        \item Describe gotchas
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{What does git describe do?}
+
+    It shows you the most recent tag reachable from a commit. But also more.
+}
+
+\frame{
+    \frametitle{What does git describe do?}
+
+    If the commit you are on points to a tag, just that tag is shown. If not,
+    the closest reachable tag is shown, along with how many commits difference
+    there is as well as an "abbreviated object name".
+}
+
+\frame{
+    \frametitle{Describe me an example}
+
+\$ git describe \\
+v1.7.8-215-gb9cfa4e
+
+\$ git rev-parse HEAD \\
+b9cfa4e96be9817e744fb728360e7f37c730d133
+
+\$ git checkout v1.7.8 \\
+\$ git describe \\
+v1.7.8
+
+}
+
+\frame{
+    \frametitle{Why is describe useful?}
+    \begin{itemize}
+        \item Easy way to quantify how far you are from a known tag
+        \item Can be used to answer the question "Is this new enough?"
+        \item Especially useful when converting from Subversion to Git
+        when you have code that looks if certain revision numbers are
+        greater/less than others
+    \end{itemize}
+
+}
+
+\frame{
+    \frametitle{Describe gotchas}
+    \begin{itemize}
+        \item Only annotated tags by default
+        \item Use --tags to also consider non-annotated tags
+        \item Use --all consider all refs: local+remote branches or any tags
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Should PDXGit be a regular thing?}
+
+    Let's vote right now!
+}
+
+\frame{
+    \frametitle{How do I get involved with PDXGit?}
+    \begin{itemize}
+        \item https://github.com/pdxgit
+        \item http://pdxgit.github.com
+        \item pdxgit@googlegroups.com
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{ Stalk Me }
+    \begin{center}
+        \begin{itemize}
+           \item http://duke.let.net
+           \item http://linkedin.leto.net
+           \item http://twitter.com/dukeleto
+           \item IRC: dukeleto on Freenode, Mozilla, Perl
+        \end{itemize}
+    \end{center}
+}
+\end{document}
