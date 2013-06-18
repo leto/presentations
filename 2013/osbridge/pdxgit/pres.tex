@@ -4,51 +4,63 @@
 \usepackage{listings}
 \setbeamercolor{sidebar}{use=structure,bg=red}
 
-\title{Clone A Git Together Into Your Town}
-\author[@dukeleto]{Jonathan "Duke" Leto\\duke.leto.net\\duke@leto.net\\@dukeleto}
+\author[@dukeleto]{Jonathan "Duke" Leto\\\small{duke.leto.net\\duke@leto.net\\@dukeleto}}
 \date{}
+\title[PDXGit.clone()\hspace{2em}\insertframenumber/
+\inserttotalframenumber]{Clone A Git Together Into Your Town}
+\setbeamertemplate{navigation symbols}{} %no nav symbols
+
+% keynote-ish
+\renewcommand\sfdefault{phv}
+\renewcommand\familydefault{\sfdefault}
+\usetheme{default}
+\usepackage{color}
+\useoutertheme{default}
+\usepackage{texnansi}
+\usepackage{marvosym}
+\definecolor{bottomcolour}{rgb}{0.32,0.3,0.38}
+\definecolor{middlecolour}{rgb}{0.08,0.08,0.16}
+\setbeamerfont{title}{size=\Huge}
+\setbeamercolor{structure}{fg=gray}
+\setbeamertemplate{frametitle}[default]%[center]
+\setbeamercolor{normal text}{bg=black, fg=white}
+\setbeamertemplate{background canvas}[vertical shading]
+[bottom=bottomcolour, middle=middlecolour, top=black]
+\setbeamertemplate{items}[circle]
+\setbeamerfont{frametitle}{size=\huge}
+\setbeamertemplate{navigation symbols}{} %no nav symbols
 
 \begin{document}
 
 \frame[t]{
     \begin{center}
-            \includegraphics[scale=0.2]{pdxgit-simantel-green}
+            \includegraphics[scale=0.15]{pdxgit-simantel-green}
     \end{center}
     \titlepage
 }
 
-\frame[t]{
+\frame{
     \frametitle{ \includegraphics[scale=0.2]{pdxgit} PDX Git Together}
-        The monthly user group that doesn't lose your data!
+
+    \indent The monthly user group that doesn't lose your data!  \\
+
+    \begin{huge}
+        pdxgit.com
+    \end{huge}
+
+}
+
+\frame{
+    \frametitle{Infrastructure}
 
     \begin{itemize}
         \item Github Pages
         \item Twitter Bootstrap
+        \item Font Awesome
         \item Google Groups
         \item Calagator
         \item Twitter
         \item LinkedIn
-    \end{itemize}
-
-    Part of this checklist is an in-depth introduction to the infrastructure of http://pdxgit.com, which uses Github Pages and Twitter Bootstrap. The website is powered by a Github repository which updates the website every time a new commit is pushed.
-
-    This talk does not assume any prior knowledge of Git and will be focused more on how communities can effectively use tools such as Github or BitBucket to self-organize.
-
-    Other items on the checklist are how to find a venue for your group and how to choose and codify your community guidelines.
-
-    \begin{itemize}
-        \item X
-        \item Y
-        \item Z
-    \end{itemize}
-}
-
-\frame{
-    \frametitle{Future}
-    \begin{itemize}
-        \item X
-        \item Y
-        \item Z
     \end{itemize}
 }
 
@@ -67,6 +79,57 @@
 }
 
 \frame{
+    \frametitle{History}
+
+    Regular Monthly Meeting at Elemental Technologies
+
+    \begin{itemize}
+        \item 27. March 2013
+        \item 24. April 2013
+        \item 29. May 2013
+        \item next $ \to $ 26. June. 2013
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Getting Free Stuff}
+    \begin{itemize}
+        \item Venue
+        \item Food
+        \item Schwag
+        \item Publicity
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Self-Organizing Communities}
+    \begin{itemize}
+        \item Chaos
+        \item Meritocracy
+        \item Transparency
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Community Guidelines}
+    \begin{itemize}
+        \item Define  Publicly
+        \item Modify  Publicly
+        \item Enforce Publicly
+    \end{itemize}
+}
+
+\frame{
+    \frametitle{Future}
+    \begin{itemize}
+        \item Rotating leadership
+        \item T-Shirts
+        \item Stickers
+        \item Focused Hackathons
+    \end{itemize}
+}
+
+\frame{
     \frametitle{Checklist}
     In addition, an easy to follow checklist will be presented for anybody that would like to start a Git community, i.e. spreading the DAG, to a town of their choice.
 
@@ -78,23 +141,30 @@
 \frame{
     \frametitle{How do I get involved with PDX Git Together?}
     \begin{itemize}
-        \item http://pdxgit.com
-        \item https://github.com/pdxgit
         \item @pdxgit
+        \item pdxgit.com
+        \item github.com/pdxgit
         \item pdxgit@googlegroups.com
+        \item Come to the next meeting June 26th!
     \end{itemize}
 }
 
 \frame{
-    \frametitle{ Stalk Me }
+    \frametitle{git merge -s=social}
     \begin{center}
         \begin{itemize}
+           \item @dukeleto
+           \item 209.691.DUKE
            \item duke.leto.net
            \item duke@leto.net
-           \item @dukeleto
            \item linkedin.leto.net
            \item IRC: dukeleto on Freenode, Mozilla, Perl
         \end{itemize}
     \end{center}
+}
+
+\frame{
+    \frametitle{Mahalo!}
+    \includegraphics[scale=2.0]{pdxgit}
 }
 \end{document}
