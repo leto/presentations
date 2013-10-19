@@ -1,0 +1,12 @@
+Excerpt:
+
+Git is used everywhere, but few formal communities or groups exist. Learn about the PDX Git Together and how to clone this community model into your town.
+
+Description:
+
+This talk will give a background of the history of the Git community and predictions for where it is headed in the future. In addition, an easy to follow checklist will be presented for anybody that would like to start a Git community,i.e. spreading the DAG, to a town of their choice.
+
+Part of this checklist is an in-depth introduction to the infrastructure of http://pdxgit.com, which uses Github Pages and Twitter Bootstrap. The website is powered by a [Git repo](https://github.com/pdxgit/pdxgit.github.com) which updates the website every time a new commit is pushed.
+
+Other items on the checklist are how to find a venue for your group and how to choose and codify your community guidelines.
+
