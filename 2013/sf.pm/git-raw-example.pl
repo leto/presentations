@@ -1,3 +1,5 @@
+use Git::Raw;
+
 my $url  = 'git://github.com/git/git.git';
 my $repo = Git::Raw::Repository->clone($url,
             'git', { bare => 0 });

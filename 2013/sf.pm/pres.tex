@@ -34,7 +34,9 @@
 
 \frame[t]{
     \begin{center}
-            \includegraphics[scale=0.15]{pdxgit-simantel-green}
+            %\includegraphics[scale=0.15]{pdxgit-simantel-green}
+            \includegraphics[scale=0.15]{branching}
+
     \end{center}
     \titlepage
 }
@@ -49,7 +51,14 @@
 \frame{
     \frametitle{Sponsors}
     \begin{center}
-        \includegraphics[scale=0.5]{geekdom}
+        \includegraphics[scale=0.4]{shutterstock}
+    \end{center}
+}
+
+\frame{
+    \frametitle{Sponsors}
+    \begin{center}
+        \includegraphics[scale=0.4]{geekdom}
     \end{center}
 }
 
@@ -178,11 +187,11 @@
 }
 
 \frame{
-    \frametitle{What *is* Git, exactly?}
-    Using libgit2 from Perl 5
+    \frametitle{Using libgit2 from Perl 5}
+
     \begin{center}
         \begin{itemize}
-        \item Git::Raw;
+        \item use Git::Raw;
         \item Low-level access to Git objects
         \item Plumbing, not porcelain
         \end{itemize}
@@ -194,6 +203,24 @@
     Git::Raw example
     \lstinputlisting{git-raw-example.pl}
 }
+
+\frame{
+    \frametitle{Using Git from Perl 5}
+    use Git::Repository;
+    \begin{center}
+        \begin{itemize}
+        \item Shells out to normal git binary
+        \item Implements plumbing + porcelain
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What *is* Git, exactly?}
+    Git::Repository example
+    \lstinputlisting{git-repo-example.pl}
+}
+
 \frame{
     \frametitle{What *is* Git, exactly?}
     github.com/creationix/js-git
@@ -213,6 +240,20 @@
         \begin{itemize}
         \item Perl 5 $\sim$ Git 1.x
         \item Perl 6 $\sim$ libgit2
+        \end{itemize}
+    \end{center}
+}
+
+
+\frame{
+    \frametitle{Using Git}
+    Git - The command line isn't the only way
+    \begin{center}
+        \begin{itemize}
+        \item git gui
+        \item Github for Mac/Windows
+        \item GitX-dev
+        \item Atalassian SourceTree
         \end{itemize}
     \end{center}
 }
