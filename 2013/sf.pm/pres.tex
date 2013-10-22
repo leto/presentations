@@ -4,10 +4,10 @@
 \usepackage{listings}
 \setbeamercolor{sidebar}{use=structure,bg=red}
 
-\author[@dukeleto]{Jonathan "Duke" Leto\\\small{duke.leto.net\\duke@leto.net\\@dukeleto}}
+\author[@dukeleto]{Jonathan "Duke" Leto\\\small{@dukeleto\\letolabs.com\\duke@leto.net}}
 \date{}
 \title[Git.init()\hspace{2em}\insertframenumber/
-\inserttotalframenumber]{Clone A Git Together Into Your Town}
+\inserttotalframenumber]{Learning To Love The DAG For Fun And Profit}
 \setbeamertemplate{navigation symbols}{} %no nav symbols
 
 % keynote-ish
@@ -40,150 +40,228 @@
 }
 
 \frame{
-    \frametitle{ \includegraphics[scale=0.2]{pdxgit} PDX Git Together}
+    \frametitle{ \includegraphics[scale=0.2]{pdxgit} A Bit About Me }
+    \begin{center}
+        \begin{itemize}
+            \item PDX Git Together
+            \item Git consulting
+            \item Parrot Virtual Machine
+            \item Google Summer of Code
+            \item ...
+        \end{itemize}
+    \end{center}
 
-    \indent The monthly user group that doesn't lose your data!  \\
+}
 
+\frame{
+    \frametitle{What *is* Git, exactly?}
+    \begin{center}
+        \begin{itemize}
+        \item A DAG (Directed Acyclic Graph)
+        \item A content tracker
+        \item A diverse community with a common bond
+        \item A collection of implementations
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What *is* Git, exactly?}
+    DAG = Directed Acyclic Graph
+    \begin{center}
+        \begin{itemize}
+        \item a "Tree of Arrows"
+        \item You can't be your own Grandpa
+        \item Graph = nodes + vertices
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What *is* Git, exactly?}
+    A content tracker
+    \begin{center}
+        \begin{itemize}
+        \item Originally "an information manager from hell"
+        \item Track changes in content, storing the diffs
+        \item An empty directory has no content
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What *is* Git, exactly?}
+    A diverse community with a common bond
+    \begin{center}
+        \begin{itemize}
+        \item Started with Linus in kernel-land and then spread quickly
+        \item Now: web app developers, UI designers, scientists, professors...
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What *is* Git, exactly?}
+    A Collection of Implementations
+    \begin{center}
+        \begin{itemize}
+        \item "official" Git 1.x
+        \item JGit - Git 1.x server in Java
+        \item libgit2 - "fresh start" linkable library in C
+        \item js-git - Very alpha implementation in Javascript
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What *is* Git, exactly?}
+    Git 1.x
+    \begin{center}
+        \begin{itemize}
+        \item /bin/sh
+        \item C
+        \item Perl (git svn, git add -i)
+        \item Some optional optimized assembly
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What *is* Git, exactly?}
+    JGit
+    \begin{center}
+        \begin{itemize}
+        \item Git server written in Java
+        \item Eclipse
+        \item Gerrit Code Review
+        \item various commercial products
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What *is* Git, exactly?}
+    libgit2.github.com
+    \begin{center}
+        \begin{itemize}
+        \item No dependencies
+        \item ANSI 89 C for max(portability)
+        \item Linkable, re-entrant C library
+        \item Designed for multi-threading
+        \item Funded by: Github + Microsoft
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{What *is* Git, exactly?}
+    github.com/creationix/js-git
+    \begin{center}
+        \begin{itemize}
+        \item Git in Pure JavaScript
+        \item Currently only read-only supports
+        \item Funded on bountysource.com
+        \item Large donations from Mozilla + Adobe
+        \end{itemize}
+    \end{center}
+}
+
+\frame{
+    \frametitle{Git + Perl community similarities}
+    \begin{center}
+        \begin{itemize}
+        \item Perl 5 $\sim$ Git 1.x
+        \item Perl 6 $\sim$ libgit2
+        \end{itemize}
+    \end{center}
+}
+
+%\frame{
+%    \frametitle{}
+%    \begin{center}
+%        \begin{itemize}
+%        \item 
+%        \end{itemize}
+%    \end{center}
+%}
+
+\frame{
+    \frametitle{Recent Features: 1.8.4}
     \begin{huge}
-        pdxgit.com
+    git clean -i
     \end{huge}
 
+    "interactive cleaning"
+}
+\frame{
+    \frametitle{Useful Features}
+
+    \begin{huge}
+    git checkout -
+    \end{huge}
+
+    "checkout the last branch I was on"
 }
 
 \frame{
-    \frametitle{Infrastructure}
+    \frametitle{Useful Features}
 
-    \begin{columns}
-    \begin{column}{5cm}
-        \includegraphics[scale=0.5]{cat-tube}
-    \end{column}
-    \begin{column}{5cm}
+    \begin{huge}
+    git merge -
+    \end{huge}
+
+    "merge the last branch I was on"
+}
+
+\frame{
+    \frametitle{Useful Features}
+
+    git blame -L 20,50 foo.txt \# lines 20-50
+
+    git blame -L 10,+10 foo.txt \# lines 10-20
+
+    git blame -L 50,-10 foo.txt \# lines 40-50
+}
+
+\frame{
+    \frametitle{Coming Soon! in 1.8.5}
+
+    git log HEAD <=> git log @
+}
+\frame{
+    \frametitle{Coming Soon! in 1.8.5}
+
+    git -C foo/ status $\sim$ make -C foo/
+}
+
+\frame{
+    \frametitle{Extra Credit}
+    \# Read the first Git commit by Linus himself
+
+    \# Thu Apr 7 15:13:13 2005
+
+    \$ git clone git://github.com/git/git.git
+
+    \$ git show e83c5163
+}
+
+\frame{
+    \frametitle{How I Can Help You}
+    Git It Together
+    \begin{center}
         \begin{itemize}
-            \item Github Pages
-            \item Twitter Bootstrap
-            \item Font Awesome
-            \item Google Groups
-            \item Calagator
-            \item Twitter
-            \item LinkedIn
-        \end{itemize}
-    \end{column}
-    \end{columns}
-}
-
-\frame{
-    \frametitle{History}
-
-    \begin{itemize}
-        \item GSoC Mentor Summit Oct 2010
-        \item Git Together Developer Conf Oct 2010
-        \item GSoC Mentor Summit Oct 2011
-        \item Git Together Developer Conf Oct 2011
-        \item 26. Jan 2012 pdxgit.com
-        \item 1. Feb 2012 1st Meeting
-        \item 27. Aug 2012 2nd Meeting (@igalko)
-    \end{itemize}
-}
-
-\frame{
-    \frametitle{History}
-
-    Regular Monthly Meeting at Elemental Technologies
-
-    \begin{itemize}
-        \item 27. March 2013
-        \item 24. April 2013
-        \item 29. May 2013
-        \item next $ \to $ 26. June. 2013
-    \end{itemize}
-}
-
-\frame{
-    \frametitle{Getting Free Stuff}
-    \begin{columns}
-        \begin{column}{5cm}
-        \includegraphics[scale=0.25]{free_tibet}
-        \end{column}
-        \begin{column}{5cm}
-        \begin{itemize}
-            \item Venue
-            \item Food
-            \item Schwag
-            \item Publicity
-        \end{itemize}
-        \end{column}
-    \end{columns}
-}
-
-\frame{
-    \frametitle{Self-Organizing Communities}
-        \begin{columns}
-        \begin{column}{5cm}
-            \includegraphics[scale=0.5]{lorenz}
-        \end{column}
-        \begin{column}{5cm}
+            \item Educating stakeholders on the value of Git
+            \item On-site Training
+            \item Implementing Git at your organization
             \begin{itemize}
-                \item Chaos
-                \item Meritocracy
-                \item Transparency
+                \item Converting from cvs|svn|? $\rightarrow$ Git
+                \item Continuous Integration
+                \item Deployment from Git
+                \item Custom workflow creation + documentation
             \end{itemize}
-        \end{column}
-       \end{columns}
-}
-
-\frame{
-    \frametitle{Community Guidelines}
-        \begin{columns}
-        \begin{column}{5cm}
-            \includegraphics[scale=0.25]{lichen}
-        \end{column}
-        \begin{column}{5cm}
-            \begin{itemize}
-                \item Define  Publicly
-                \item Modify  Publicly
-                \item Enforce Publicly
-            \end{itemize}
-        \end{column}
-       \end{columns}
-}
-
-\frame{
-    \frametitle{Future}
-    \begin{itemize}
-        \item Rotating leadership
-        \item T-Shirts
-        \item Stickers
-        \item Focused Hackathons
-    \end{itemize}
-}
-
-\frame{
-    \frametitle{Checklist}
-
-    \begin{itemize}
-        \item Create a Github Org for your Clone
-        \item Fork github.com/pdxgit/pdxgit.github.com
-        \item Name your repo NAME.github.io (rules changed)
-        \item Register a domain
-        \item Change CNAME file to be your domain
-        \item Configure DNS $ \to $ Github
-        \item Create a Google Group
-        \item Get a Twitter Account
-        \item Create a LinkedIn Group
-        \item ...
-        \item PROFIT!
-    \end{itemize}
-}
-
-\frame{
-    \frametitle{How do I get involved with PDX Git Together?}
-    \begin{itemize}
-        \item @pdxgit
-        \item pdxgit.com
-        \item github.com/pdxgit
-        \item pdxgit@googlegroups.com
-        \item Come to the next meeting June 26th!
-    \end{itemize}
+            \item letolabs.com
+        \end{itemize}
+    \end{center}
 }
 
 \frame{
@@ -200,9 +278,10 @@
     \end{center}
 }
 
+
 \frame{
     \frametitle{Mahalo!}
-    \includegraphics[scale=2.0]{pdxgit}
+    \includegraphics[scale=1.5]{pdxgit}
     % \includegraphics[height=\paperheight]{pdxgit}
 }
 \end{document}
